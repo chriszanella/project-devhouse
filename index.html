@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style/output.css" />
+
+    <title>Projeto DevHouse</title>
+  </head>
+  <body class="w-screen h-screen flex">
+    <div class="hidden lg:flex flex-col h-full max-w-[200px] w-full bg-white border-slate-200 border-r-2 relative">
+      <aside
+        class="fixed"
+      >
+        <div class="flex flex-col gap-5">
+          <h1 class="text-4xl text-rose-500 font-bold">DevHouse</h1>
+          <nav class="flex flex-col gap-5">
+            <a
+              href="#"
+              class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+              >Aluguel</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+              >Comprar</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+              >Serviços</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+              >Contatos</a
+            >
+          </nav>
+        </div>
+        <button
+          class="fixed bg-slate-200 p-2 rounded-full bottom-3 hover:bg-slate-300 duration-300 cursor-pointer"
+        >
+          <img src="./assets/svg/phone-alt.svg" alt="Icone de telefone" />
+        </button>
+      </aside>
+    </div>
+
+    <div class="flex flex-col mx-auto w-full">
+      <header
+        class="box-border flex justify-between items-center h-20 bg-white px-6 py-2 mx-auto w-full"
+      >
+        <div
+          class="flex h-[45px] lg:max-w-[35%] max-w-xs w-full bg-slate-200 rounded-lg cursor-text"
+        >
+          <label
+            for="search"
+            class="flex justify-center items-center cursor-text text-[19px]"
+            ><img
+              src="./assets/svg/search.svg"
+              alt="icone de search"
+              class="w-[19px] cursor-text"
+          /></label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Procurando um apartamento?"
+            class="w-full bg-transparent font-normal outline-0"
+          />
+        </div>
+        <div class="flex items-center gap-6 ">
+          <button
+            class="hidden lg:flex p-2 rounded-full bg-slate-200 hover:bg-slate-300 duration-300 cursor-pointer"
+          >
+            <img
+              src="./assets/svg/heart.svg"
+              alt="icone de coração"
+              class="w-4 h-max"
+            />
+          </button>
+
+          <button
+            class="flex px-2 py-1 rounded-md bg-rose-500 hover:bg-rose-700 duration-300 text-white cursor-pointer"
+          >
+            <p class="hidden lg:flex font-semibold">Sign in</p>
+            <img
+              src="./assets/svg/pessoa.svg"
+              alt="icone de pessoa"
+              class="text-white flex lg:hidden"
+            />
+          </button>
+
+          <button
+            id="open-bars"
+            onclick="openMenu()"
+            class="flex w-8 lg:hidden hover:scale-110 duration-300 cursor-pointer"
+          >
+            <img src="./assets/svg/bars.svg" alt="icone de barras" />
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile NavBar -->
+      <div
+        id="menuMobile"
+        onclick="closeMenu()"
+        class="absolute z-50 bg-white shadow-xl hidden flex-col items-center gap-8 w-full py-4"
+      >
+        <button
+          id="x-close"
+          class="cursor-pointer hover:scale-110 duration-300"
+        >
+          <img src="./assets/svg/X.svg" alt="icone de X" />
+        </button>
+        <nav class="flex flex-col items-center gap-2">
+          <a
+            href="#"
+            class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+            >Aluguel</a
+          >
+          <a
+            href="#"
+            class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+            >Comprar</a
+          >
+          <a
+            href="#"
+            class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+            >Serviços</a
+          >
+          <a
+            href="#"
+            class="text-gray-500 px-4 py-2 hover:bg-slate-200 rounded-lg duration-300"
+            >Contatos</a
+          >
+        </nav>
+      </div>
+
+      <div class="box-border flex flex-col w-full h-full px-6 py-6 bg-slate-200">
+        <div class="flex justify-between items-center">
+          <h1 class="text-4xl font-bold mb-6">Compre ou Alugue</h1>
+          <p class="hidden lg:flex text-gray-800 font-medium">
+            100 casas encontradas.
+          </p>
+        </div>
+
+        <div class="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid gap-3">
+
+          <a href="#" class="flex flex-col bg-white p-3 rounded-lg relative min-h-[400px] w-full hover:shadow-xl duration-300">
+            <div class="flex flex-col group overflow-hidden rounded-lg">
+              <img src="./assets/1.jpg" alt="casa" class="mh-64 rounded-lg object-cover h-60 group-hover:scale-105 duration-300">
+              <div class="flex gap-3 bg-slate-50/70 self-start px-4 py-1 rounded-full absolute top-5 left-5 group-hover:bg-slate-50 duration-300">
+                <img src="./assets/svg/map.svg" alt="map">
+                <p>Brunópolis - SC</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-4">
+              <h1 class="text-2xl font-bold">Apartamento Brunópolis</h1>
+              <div>
+                <p class="font-medium text-gray-500 line-through">R$ 3.000/mês</p>
+                <p class="font-bold text-indigo-600 text-lg">R$ 2.000/mês</p>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <span class="font-bold">100 Metros -</span>
+              <span class="font-bold">3 Quartos -</span>
+              <span class="font-bold">2 Banheiros</span>
+            </div>
+          </a>
+
+          <a href="#" class="flex flex-col bg-white p-3 rounded-lg relative min-h-[400px] w-full hover:shadow-xl duration-300">
+            <div class="flex flex-col group overflow-hidden rounded-lg">
+              <img src="./assets/2.jpg" alt="casa" class="mh-64 rounded-lg object-cover h-64 group-hover:scale-105 duration-300">
+              <div class="flex gap-3 bg-slate-50/70 self-start px-4 py-1 rounded-full absolute top-5 left-5 group-hover:bg-slate-50 duration-300">
+                <img src="./assets/svg/map.svg" alt="map">
+                <p>Brunópolis - SC</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-4">
+              <h1 class="text-2xl font-bold">Apartamento Brunópolis</h1>
+              <div>
+                <p class="font-medium text-gray-500 line-through">R$ 3.000/mês</p>
+                <p class="font-bold text-indigo-600 text-lg">R$ 2.000/mês</p>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <span class="font-bold">100 Metros -</span>
+              <span class="font-bold">3 Quartos -</span>
+              <span class="font-bold">2 Banheiros</span>
+            </div>
+          </a>
+
+          <a href="#" class="flex flex-col bg-white p-3 rounded-lg relative min-h-[400px] w-full hover:shadow-xl duration-300">
+            <div class="flex flex-col group overflow-hidden rounded-lg">
+              <img src="./assets/3.jpg" alt="casa" class="mh-64 rounded-lg object-cover h-64 group-hover:scale-105 duration-300">
+              <div class="flex gap-3 bg-slate-50/70 self-start px-4 py-1 rounded-full absolute top-5 left-5 group-hover:bg-slate-50 duration-300">
+                <img src="./assets/svg/map.svg" alt="map">
+                <p>Brunópolis - SC</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-4">
+              <h1 class="text-2xl font-bold">Apartamento Brunópolis</h1>
+              <div>
+                <p class="font-medium text-gray-500 line-through">R$ 3.000/mês</p>
+                <p class="font-bold text-indigo-600 text-lg">R$ 2.000/mês</p>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <span class="font-bold">100 Metros -</span>
+              <span class="font-bold">3 Quartos -</span>
+              <span class="font-bold">2 Banheiros</span>
+            </div>
+          </a>
+
+          <a href="#" class="flex flex-col bg-white p-3 rounded-lg relative min-h-[400px] w-full hover:shadow-xl duration-300">
+            <div class="flex flex-col group overflow-hidden rounded-lg">
+              <img src="./assets/4.jpg" alt="casa" class="mh-64 rounded-lg object-cover h-64 group-hover:scale-105 duration-300">
+              <div class="flex gap-3 bg-slate-50/70 self-start px-4 py-1 rounded-full absolute top-5 left-5 group-hover:bg-slate-50 duration-300">
+                <img src="./assets/svg/map.svg" alt="map">
+                <p>Brunópolis - SC</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-4">
+              <h1 class="text-2xl font-bold">Apartamento Brunópolis</h1>
+              <div>
+                <p class="font-medium text-gray-500 line-through">R$ 3.000/mês</p>
+                <p class="font-bold text-indigo-600 text-lg">R$ 2.000/mês</p>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <span class="font-bold">100 Metros -</span>
+              <span class="font-bold">3 Quartos -</span>
+              <span class="font-bold">2 Banheiros</span>
+            </div>
+          </a>
+
+          <a href="#" class="flex flex-col bg-white p-3 rounded-lg relative min-h-[400px] w-full hover:shadow-xl duration-300">
+            <div class="flex flex-col group overflow-hidden rounded-lg">
+              <img src="./assets/5.jpg" alt="casa" class="mh-64 rounded-lg object-cover h-64 group-hover:scale-105 duration-300">
+              <div class="flex gap-3 bg-slate-50/70 self-start px-4 py-1 rounded-full absolute top-5 left-5 group-hover:bg-slate-50 duration-300">
+                <img src="./assets/svg/map.svg" alt="map">
+                <p>Brunópolis - SC</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-4">
+              <h1 class="text-2xl font-bold">Apartamento Brunópolis</h1>
+              <div>
+                <p class="font-medium text-gray-500 line-through">R$ 3.000/mês</p>
+                <p class="font-bold text-indigo-600 text-lg">R$ 2.000/mês</p>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <span class="font-bold">100 Metros -</span>
+              <span class="font-bold">3 Quartos -</span>
+              <span class="font-bold">2 Banheiros</span>
+            </div>
+          </a>
+
+          <a href="#" class="flex flex-col bg-white p-3 rounded-lg relative min-h-[400px] w-full hover:shadow-xl duration-300">
+            <div class="flex flex-col group overflow-hidden rounded-lg">
+              <img src="./assets/6.jpg" alt="casa" class="mh-64 rounded-lg object-cover h-64 group-hover:scale-105 duration-300">
+              <div class="flex gap-3 bg-slate-50/70 self-start px-4 py-1 rounded-full absolute top-5 left-5 group-hover:bg-slate-50 duration-300">
+                <img src="./assets/svg/map.svg" alt="map">
+                <p>Brunópolis - SC</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-4">
+              <h1 class="text-2xl font-bold">Apartamento Brunópolis</h1>
+              <div>
+                <p class="font-medium text-gray-500 line-through">R$ 3.000/mês</p>
+                <p class="font-bold text-indigo-600 text-lg">R$ 2.000/mês</p>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <span class="font-bold">100 Metros -</span>
+              <span class="font-bold">3 Quartos -</span>
+              <span class="font-bold">2 Banheiros</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
